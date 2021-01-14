@@ -37,11 +37,6 @@ body {
   color: black;
 }
 
-#navbar a.active {
-  background-color: #8c918c;
-  color: white;
-}
-
 .content {
   padding: 16px;
 }
@@ -50,14 +45,15 @@ body {
   position: fixed;
   top: 0;
   width: 98%;
-
-
-
 }
 
 .sticky + .content {
   padding-top: 60px;
 
+}
+.active {
+  background-color: grey ;
+  color: white;
 }
 
 
