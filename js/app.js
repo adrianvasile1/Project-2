@@ -37,3 +37,22 @@ links.map(element => {
     })
   })
 })
+
+//active nav on scroll
+window.addEventListener('scroll',event => {
+  let navigationLinks = document.querySelectorAll('navbar a');
+  let fromTop = window.scrollY;
+
+  navigationLinks.forEach(link => {
+    let section = document.querySelectorAll(link,hash);
+
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add('active');
+    }else {
+      link.classList.remove('active');
+    }
+    });
+  });
