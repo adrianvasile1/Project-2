@@ -5,6 +5,9 @@ body {
   font-size: 15px;
   font-family: Arial, Helvetica;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .header {
   background-color: #ffffff;
@@ -12,30 +15,6 @@ body {
   text-align: center;
   border-bottom: 1px solid black;
 
-}
-
- #navbar {
-  overflow: hidden;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid black;
-  padding: 10px 10px 10px;
-
-}
-
-#navbar a {
-  float: right;
-  display: block;
-  color:black;
-  text-align: center;
-  padding: 10px 10px 10px;
-  text-decoration: none;
-  font-size: 20px;
-  background-color: white;
-}
-
-#navbar a:hover {
-  background-color: rgb(172, 170, 170);
-  color: black;
 }
 
 .content {
@@ -53,20 +32,64 @@ body {
 
 }
 
-/*active nav*/
 
-#navbar a.active {
-  background-color: grey ;
-  color: white;
+/* top navigation */
+#nav-container {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  padding: 10px 10px 10px;
+}
+.nav-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.nav-logo {
+  text-decoration: none;
+  color:black;
+  display: grid;
+  justify-self: start;
+  margin-left: 20px;
+  padding: 2px;
+  font-weight: 600;
+}
+.nav-logo:hover {
+  color: #000;
+}
+.tab-nav {
+  display: none;
+}
+.tab-nav-label {
+  color: #000;
+  display: none;
+}
+.tab-content {
+  list-style: none;
+  justify-self: end;
+  margin: 0;
+  padding: 0;
+}
+.tab-content li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.tab-content li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
 }
 
-#navbar.scroll a.active {
-  background-color: darkcyan;
-  color: white;
+/* active navigation */
+#nav-container.scroll a.active {
+  color: #000;
+  border-bottom: 1px solid #000;
 }
-
-
-
+#nav-container a.active {
+  color: darkturquoise;
+  border-bottom: 1px solid darkturquoise;
+}
 
 
 /*sections*/
@@ -79,7 +102,7 @@ section h1 {
 }
 
 
-/* SIDE NAV*/
+/* side nav*/
 
 .sidenav {
   height: 100%;
@@ -115,22 +138,53 @@ section h1 {
   margin-left: 50px;
 }
 
-#navbar #main1 {
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px;
-  position: absolute;
 
+/*resize*/
+
+@media screen and (max-width: 1280px) {
+
+  header {
+      width: 100%;
+  }
+  .nav-container {
+      width: 100%;
+  }
 }
 
-#main1 {
-  transition: margin-left .5s;
-  padding: 16px;
+@media screen and (max-width: 768px) {
+  .tab-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1/4;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    justify-self: center;
+    transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+}
+.tab-nav-label {
+    display: grid;
+    cursor: pointer;
+    grid-column: 3;
+    padding-right: 20px;
+}
+
+.nav-checkbox input:checked ~ .tab-content {
+      max-height: 400px;
+  }
+  .tab-content li {
+      padding: 10px 0;
+      margin-right: 0px;
+  }
+  .nav-checkbox input:checked ~ .tab-nav-label {
+      color: #000;
+  }
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-  #navbar {padding-top: 15px;}
-  #navbar a {font-size: 25px;}
+
 }
