@@ -1,3 +1,30 @@
+// add Li to 
+function MenuItem(name) {
+  let li = document.createElement('li');
+  li.textContent = name;
+  return li;
+}
+// get the ul#menu
+const menu = document.querySelector('#into');
+
+
+// add menu item
+menu.appendChild(MenuItem('Home'));
+menu.appendChild(MenuItem('Our Works'));
+menu.appendChild(MenuItem('Team'));
+menu.appendChild(MenuItem('Testimonials'));
+menu.appendChild(MenuItem('Subscribe'));
+
+
+
+
+
+// Add style on the nav 
+document.addEventListener('click', addItem);
+function addItem(){
+document.getElementById('into').classList.add('tab-content');
+}
+
 //When scroll the topnav is fixed .
 const navbar = document.getElementById("nav-container");
 const sticky = navbar.offsetTop;
@@ -56,7 +83,7 @@ links.map(element => {
   element.addEventListener("click", e => {
     e.preventDefault()
     document.getElementById(e.target.dataset.target).scrollIntoView({
-      behavior: "smooth", block: "end", inline: "nearest"
+      behavior: "smooth", block: "start", inline: "nearest"
     })
   })
 })
