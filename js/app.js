@@ -12,12 +12,6 @@ function myFunction() {
   }
 }
 
-//Change navigation style on scroll
-window.addEventListener('scroll', event => { 
-  let nav = document.querySelector('.nav-container'); 
-  
-  (window.scrollY >= 10) ? nav.classList.add('scroll') : nav.classList.remove('scroll');
-});
 
 //Active navigation on scroll
 window.addEventListener('scroll', event => {
@@ -41,7 +35,7 @@ navigationLinks.forEach(link => {
 // This function open and close the sidenav also is changing the color of the background when is activated .
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("navbar").style.marginLeft = "250px";
+  document.getElementById("nav-container").style.marginLeft = "250px";
   document.getElementById("main").style.marginLeft = "250px";
   document.body.style.backgroundColor = "white";
   document.body.style.color= "grey";
@@ -49,7 +43,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("navbar").style.marginLeft= "0";
+  document.getElementById("nav-container").style.marginLeft= "0";
   document.getElementById("main").style.marginLeft= "0";
   document.body.style.backgroundColor = "white";
   document.body.style.color= "black";

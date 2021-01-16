@@ -85,10 +85,14 @@ html {
 #nav-container.scroll a.active {
   color: #000;
   border-bottom: 1px solid #000;
+  background-color: grey;
+  padding: 2px;
 }
 #nav-container a.active {
   color: darkturquoise;
   border-bottom: 1px solid darkturquoise;
+  background-color: green;
+  padding: 5px;
 }
 
 
