@@ -1,29 +1,20 @@
-// add Li to 
-function MenuItem(name) {
-  let li = document.createElement('li');
-  li.textContent = name;
-  return li;
-}
-// get the ul#menu
+//array for nav bar
 const menu = document.querySelector('#into');
-
-
-// add menu item
-menu.appendChild(MenuItem('Home'));
-menu.appendChild(MenuItem('Our Works'));
-menu.appendChild(MenuItem('Team'));
-menu.appendChild(MenuItem('Testimonials'));
-menu.appendChild(MenuItem('Subscribe'));
-
-
-
-
-
-// Add style on the nav 
-document.addEventListener('click', addItem);
-function addItem(){
 document.getElementById('into').classList.add('tab-content');
-}
+const ul = document.querySelector(".tab-content");
+const section = document.querySelectorAll("section");
+const navbarbuilder = () => {
+  for (let i = 0; i < section.length; i++) {
+    const listelement = document.createElement("li");
+    const linkelement = document.createElement("a");
+    linkelement.textContent = `Section ${i + 1}`;
+    linkelement.setAttribute("href", `#section${i + 1}`);
+    listelement.appendChild(linkelement);
+    ul.appendChild(listelement);
+  }
+};
+window.addEventListener("DOMContentLoaded", navbarbuilder);
+
 
 //When scroll the topnav is fixed .
 const navbar = document.getElementById("nav-container");
@@ -38,6 +29,8 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
 
 
 //Active navigation on scroll

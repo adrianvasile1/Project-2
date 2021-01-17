@@ -17,20 +17,14 @@ html {
 
 }
 
-.content {
-  padding: 16px;
-}
-
 .sticky {
   position: fixed;
   top: 0;
   width: 98%;
-}
-
-.sticky + .content {
-  padding-top: 60px;
+  margin-bottom: 10px;
 
 }
+
 
 
 /* top navigation */
@@ -88,7 +82,8 @@ html {
   color: #000;
   border-bottom: 1px solid #000;
   background-color: grey;
-  padding: 2px;
+  padding: 5px;
+
 }
 #nav-container a.active {
   color: darkturquoise;
@@ -105,6 +100,10 @@ section{
 }
 section h1 {
   padding: 20px;
+}
+
+article{
+  padding-top: 50px;
 }
 
 
